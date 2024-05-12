@@ -3,6 +3,15 @@ color 0c
 cls
 title The DarkWin tamagochi for Windows
 
+:check
+net session >nul 2>&1
+if %errorLevel% == 0 (
+    goto menu
+) else (
+    exit
+)
+pause
+
 :menu
 cls
 color 0c
