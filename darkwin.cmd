@@ -84,6 +84,7 @@ echo [11]: Iniciar el asistente para crear una carpeta compartida
 echo [12]: Iniciar los servicios locales del sistema
 echo [13]: Iniciar restauracion de archivos del sistema
 echo [14]: Iniciar salvapantallas (ribbons)
+echo [15]: Iniciar el monitor de recursos
 echo ------------------------------------------------------------------------------------------------------
 set /p choice= [+] INGRESE LA OPCION QUE HA ELEGIDO: 
 if /i %choice%==0 goto exit
@@ -101,6 +102,7 @@ if /i %choice%==11 goto folder
 if /i %choice%==12 goto services
 if /i %choice%==13 goto restore
 if /i %choice%==14 goto screensaver
+if /i %choice%==15 goto resources
 if not /i exist %choice%: goto error
 
 :workpad
@@ -153,6 +155,10 @@ goto menu
 
 :screensaver
 cd %homedrive%/windows/system32 & start Ribbons.scr
+goto menu
+
+:resources
+cd %homedrive%/windows/system32 & start resmon.exe
 goto menu
 
 :go
