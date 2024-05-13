@@ -32,12 +32,14 @@ echo [0]: Salir del programa
 echo [1]: Verificar si hay problemas de energia en el sistema
 echo [2]: Limpiar mi equipo
 echo [3]: Ajustar los parametros de ejecucion de VBScript
+echo [4]: Desocultar los archivos de cierta unidad
 echo ------------------------------------------------------------------------------------------------------
 set /p choice= [+] INGRESE LA OPCION QUE HA ELEGIDO: 
 if /i %choice%==0 goto exit
 if /i %choice%==1 goto verify
 if /i %choice%==2 goto clean
 if /i %choice%==3 goto vbs
+if /i %choice%==3 goto des
 if not /i exist %choice%: goto error
 
 :verify
@@ -58,6 +60,18 @@ goto menu
 color 0c
 title The DarkWin tamagochi for Windows
 cd %homedrive%/windows/system32 & start wscript.exe
+pause
+goto menu
+
+:des
+color 0c
+cls
+title The DarkWin tamagochi for Windows
+echo Desocultardor de archivos de DarkWin
+echo ------------------------------------------------------------------------------------------------------
+set /p choice= [+] INGRESE LA LETRA DE LA UNIDAD A DESOCULTAR: 
+echo ------------------------------------------------------------------------------------------------------
+cd %choice%:\ & attrib -r -a -h -s %choice%:\*.* /S /D
 pause
 goto menu
 
