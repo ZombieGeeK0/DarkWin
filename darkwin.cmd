@@ -17,9 +17,9 @@ cls
 color 0c
 title The DarkWin tamagochi for Windows
 echo ------------------------------------------------------------------------------------------------------
-echo ╔╦╗┌─┐┬─┐┬┌─╦ ╦┬┌┐┌ 
-echo  ║║├─┤├┬┘├┴┐║║║││││  [+] DarkWin tamagichi for Windows 
-echo ═╩╝┴ ┴┴└─┴ ┴╚╩╝┴┘└┘  [+] By ZombiegeeK0 (https://www.github.com/ZombieGeeK0)
+echo [+] Optimization and detection tool only for Windows OS
+echo [+] DarkWin tamagochi for Windows 
+echo [+] By ZombiegeeK0 (https://www.github.com/ZombieGeeK0/DarkWin)
 echo ------------------------------------------------------------------------------------------------------
 echo [1]: Verificar si hay problemas de energia en el sistema
 echo [2]: Limpiar mi equipo
@@ -40,5 +40,6 @@ echo.
 cleanmgr & sfc /scannow & dism /online /cleanup-image /restorehealth & chkdsk C: /f /r & dism.exe /online /Cleanup-Image /StartComponentCleanup
 pause
 goto menu
+
 :error
 goto menu
