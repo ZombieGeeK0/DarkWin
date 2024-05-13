@@ -88,6 +88,9 @@ echo [15]: Iniciar el monitor de recursos
 echo [16]: Iniciar el creador de una unidad de recuperacion
 echo [17]: Iniciar el PhotoScreenSaver
 echo [18]: Iniciar el setup de OneDrive
+echo [19]: Iniciar la interfaz de nslookup
+echo [20]: Iniciar el administrador de cuentas de usuario
+echo [21]: Iniciar el salvapantallas (mystify)
 echo ------------------------------------------------------------------------------------------------------
 set /p choice= [+] INGRESE LA OPCION QUE HA ELEGIDO: 
 if /i %choice%==0 goto exit
@@ -109,6 +112,9 @@ if /i %choice%==15 goto resources
 if /i %choice%==16 goto rec
 if /i %choice%==17 goto saver
 if /i %choice%==18 goto onedrive
+if /i %choice%==19 goto look
+if /i %choice%==20 goto counts
+if /i %choice%==21 goto mys
 if not /i exist %choice%: goto error
 
 :workpad
@@ -177,6 +183,18 @@ goto menu
 
 :onedrive
 cd %homedrive%/windows/system32 & start OneDriveSetup.exe
+goto menu
+
+:look
+cd %homedrive%/windows/system32 & start nslookup.exe
+goto menu
+
+:counts
+cd %homedrive%/windows/system32 & start Netplwiz.exe
+goto menu
+
+:mys
+cd %homedrive%/windows/system32 & start Mystify.scr
 goto menu
 
 :go
