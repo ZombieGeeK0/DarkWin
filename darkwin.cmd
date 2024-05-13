@@ -75,6 +75,10 @@ echo [2]: Iniciar el WorkPad de Windows
 echo [3]: Iniciar la ventana de control de WmiMgmt (WmiMgmt.msc)
 echo [4]: Inciar el fax y escaner de Windows
 echo [5]: Iniciar Windows defender firewall con seguridad avanzada
+echo [6]: Iniciar configuracion del harware de seguridad TPM
+echo [7]: Iniciar administracion del modulo de la plataforma segura (TPM) en el equipo local
+echo [8]: Iniciar el mezclador de volumen del sistema
+echo [9]: Iniciar datos del Windows script host
 echo ------------------------------------------------------------------------------------------------------
 set /p choice= [+] INGRESE LA OPCION QUE HA ELEGIDO: 
 if /i %choice%==0 goto exit
@@ -83,6 +87,10 @@ if /i %choice%==2 goto workpad
 if /i %choice%==3 goto wmi
 if /i %choice%==4 goto fax
 if /i %choice%==5 goto firewall
+if /i %choice%==6 goto tpm
+if /i %choice%==7 goto tpmconf
+if /i %choice%==8 goto vol
+if /i %choice%==9 goto script
 if not /i exist %choice%: goto error
 
 :workpad
@@ -99,6 +107,22 @@ goto menu
 
 :firewall
 cd %homedrive%/windows/system32 & start WF.msc
+goto menu
+
+:tpm
+cd %homedrive%/windows/system32 & start TpmInit.exe
+goto menu
+
+:tpmconf
+cd %homedrive%/windows/system32 & start tpm.msc
+goto menu
+
+:vol
+cd %homedrive%/windows/system32 & start SndVol.exe
+goto menu
+
+:vol
+cd %homedrive%/windows/system32 & start slmgr.vbs
 goto menu
 
 :go
