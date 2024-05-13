@@ -52,7 +52,7 @@ goto menu
 :clean
 color 0c
 title The DarkWin tamagochi for Windows
-cleanmgr & sfc /scannow & dism /online /cleanup-image /restorehealth & chkdsk C: /f /r & dism.exe /online /Cleanup-Image /StartComponentCleanup
+cleanmgr & sfc /scannow & dism /online /cleanup-image /restorehealth & chkdsk C: /f /r & dism.exe /online /Cleanup-Image /StartComponentCleanup & defrag C:
 pause
 goto menu
 
@@ -80,6 +80,3 @@ exit
 
 :error
 goto menu
-
-:: https://www.rafaelsantos.es/web/agora/Programaci%C3%B3n%20BATCH.pdf
-:: https://todohacker.com/tutoriales/lenguaje-batch/comment-page-1
