@@ -91,6 +91,8 @@ echo [18]: Iniciar el setup de OneDrive
 echo [19]: Iniciar la interfaz de nslookup
 echo [20]: Iniciar el administrador de cuentas de usuario
 echo [21]: Iniciar el salvapantallas (mystify)
+echo [22]: Iniciar la asistencia remota de Windows
+echo [23]: Iniciar la herramienta de diagnostico del soporte tecnico de Windows
 echo ------------------------------------------------------------------------------------------------------
 set /p choice= [+] INGRESE LA OPCION QUE HA ELEGIDO: 
 if /i %choice%==0 goto exit
@@ -115,6 +117,8 @@ if /i %choice%==18 goto onedrive
 if /i %choice%==19 goto look
 if /i %choice%==20 goto counts
 if /i %choice%==21 goto mys
+if /i %choice%==22 goto asistence
+if /i %choice%==23 goto tool
 if not /i exist %choice%: goto error
 
 :workpad
@@ -195,6 +199,14 @@ goto menu
 
 :mys
 cd %homedrive%/windows/system32 & start Mystify.scr
+goto menu
+
+:asistence
+cd %homedrive%/windows/system32 & start msra.exe
+goto menu
+
+:tool
+cd %homedrive%/windows/system32 & start msdt.exe
 goto menu
 
 :go
