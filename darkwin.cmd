@@ -30,13 +30,11 @@ if /i %choice%==2 goto clean
 if not /i exist %choice%: goto error
 
 :verify
-echo.
 powercfg /energy
 pause
 goto menu
 
 :clean
-echo.
 cleanmgr & sfc /scannow & dism /online /cleanup-image /restorehealth & chkdsk C: /f /r & dism.exe /online /Cleanup-Image /StartComponentCleanup
 pause
 goto menu
