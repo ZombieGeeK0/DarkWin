@@ -93,6 +93,7 @@ echo [20]: Iniciar el administrador de cuentas de usuario
 echo [21]: Iniciar el salvapantallas (mystify)
 echo [22]: Iniciar la asistencia remota de Windows
 echo [23]: Iniciar la herramienta de diagnostico del soporte tecnico de Windows
+echo [24]: Iniciar el centro de movilidad de Windows
 echo ------------------------------------------------------------------------------------------------------
 set /p choice= [+] INGRESE LA OPCION QUE HA ELEGIDO: 
 if /i %choice%==0 goto exit
@@ -217,3 +218,5 @@ exit
 
 :error
 goto menu
+
+:: por LiveCaptions.exe
