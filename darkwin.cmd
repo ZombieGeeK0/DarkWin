@@ -85,6 +85,9 @@ echo [12]: Iniciar los servicios locales del sistema
 echo [13]: Iniciar restauracion de archivos del sistema
 echo [14]: Iniciar salvapantallas (ribbons)
 echo [15]: Iniciar el monitor de recursos
+echo [16]: Iniciar el creador de una unidad de recuperacion
+echo [17]: Iniciar el PhotoScreenSaver
+echo [18]: Iniciar el setup de OneDrive
 echo ------------------------------------------------------------------------------------------------------
 set /p choice= [+] INGRESE LA OPCION QUE HA ELEGIDO: 
 if /i %choice%==0 goto exit
@@ -103,6 +106,9 @@ if /i %choice%==12 goto services
 if /i %choice%==13 goto restore
 if /i %choice%==14 goto screensaver
 if /i %choice%==15 goto resources
+if /i %choice%==16 goto rec
+if /i %choice%==17 goto saver
+if /i %choice%==18 goto onedrive
 if not /i exist %choice%: goto error
 
 :workpad
@@ -159,6 +165,18 @@ goto menu
 
 :resources
 cd %homedrive%/windows/system32 & start resmon.exe
+goto menu
+
+:rec
+cd %homedrive%/windows/system32 & start RecoveryDrive.exe
+goto menu
+
+:saver
+cd %homedrive%/windows/system32 & start PhotoScreensaver.scr
+goto menu
+
+:onedrive
+cd %homedrive%/windows/system32 & start OneDriveSetup.exe
 goto menu
 
 :go
