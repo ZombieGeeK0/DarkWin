@@ -81,6 +81,7 @@ echo [8]: Iniciar el mezclador de volumen del sistema
 echo [9]: Iniciar datos del Windows script host
 echo [10]: Iniciar configuracion de la firma del archivo
 echo [11]: Iniciar el asistente para crear una carpeta compartida
+echo [12]: Iniciar los servicios locales del sistema
 echo ------------------------------------------------------------------------------------------------------
 set /p choice= [+] INGRESE LA OPCION QUE HA ELEGIDO: 
 if /i %choice%==0 goto exit
@@ -95,6 +96,7 @@ if /i %choice%==8 goto vol
 if /i %choice%==9 goto script
 if /i %choice%==10 goto sign
 if /i %choice%==11 goto folder
+if /i %choice%==12 goto services
 if not /i exist %choice%: goto error
 
 :workpad
@@ -135,6 +137,10 @@ goto menu
 
 :folder
 cd %homedrive%/windows/system32 & start shrpubw.exe
+goto menu
+
+:services
+cd %homedrive%/windows/system32 & start services.msc
 goto menu
 
 :go
