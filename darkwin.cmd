@@ -80,3 +80,6 @@ exit
 
 :error
 goto menu
+
+:: https://www.rafaelsantos.es/web/agora/Programaci%C3%B3n%20BATCH.pdf
+:: https://todohacker.com/tutoriales/lenguaje-batch/comment-page-1
