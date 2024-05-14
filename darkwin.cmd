@@ -56,7 +56,7 @@ goto menu
 :clean
 color 0c
 title The DarkWin tamagochi for Windows
-cleanmgr & sfc /scannow & dism /online /cleanup-image /restorehealth & chkdsk C: /f /r & dism.exe /online /Cleanup-Image /StartComponentCleanup & defrag C: /r & netsh int ip reset
+cleanmgr /sagerun & sfc /scannow & dism /online /cleanup-image /restorehealth & DISM /Online /Cleanup-Image /ScanHealth & DISM /Online /Cleanup-Image /CheckHealth & chkdsk C: /f /r & dism.exe /online /Cleanup-Image /StartComponentCleanup & defrag C: /r & netsh int ip reset & del index.dat/s
 pause
 goto menu
 
